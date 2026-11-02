@@ -1,0 +1,9 @@
+---
+layout: default
+---
+<nav class="back"><a href="{{ '/' | relative_url }}">← 返回文章目录</a></nav>
+<article class="prose">
+{% unless page.has_heading %}<h1>{{ page.title | escape }}</h1>{% endunless %}
+{{ content }}
+</article>
+<nav class="back bottom"><a href="{{ '/' | relative_url }}">← 返回文章目录</a></nav>

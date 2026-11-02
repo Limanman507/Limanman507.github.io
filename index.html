@@ -1,0 +1,11 @@
+---
+layout: default
+title: 文章目录
+---
+<section class="intro"><p class="eyebrow">LIMANMAN / NOTES</p><h1>文章目录</h1><p>记录学习、实践与思考。</p></section>
+{% assign articles = site.pages | where: "article", true | sort: "path" | reverse %}
+<ol class="articles">
+{% for article in articles %}
+<li><a href="{{ article.url | relative_url }}"><span>{{ article.title | escape }}</span><span class="arrow" aria-hidden="true">↗</span></a></li>
+{% else %}<li>还没有文章。</li>{% endfor %}
+</ol>

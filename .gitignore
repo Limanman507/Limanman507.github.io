@@ -1,0 +1,6 @@
+.build-source/
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.DS_Store
+Thumbs.db

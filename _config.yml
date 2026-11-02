@@ -1,0 +1,16 @@
+title: Limanman 的博客
+description: 学习、实践与思考
+url: "https://limanman507.github.io"
+baseurl: ""
+lang: zh-CN
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+exclude: [README.md, scripts, publish.cmd, publish.ps1, .build-source, .github]
+defaults:
+  - scope:
+      path: "docs"
+    values:
+      layout: article
+      article: true

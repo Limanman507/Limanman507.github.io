@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page.title | escape }} · {{ site.title | escape }}</title>
+<meta name="description" content="{{ site.description | escape }}">
+<link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+</head>
+<body>
+<header class="site-header"><a class="brand" href="{{ '/' | relative_url }}">{{ site.title | escape }}</a><a href="{{ '/' | relative_url }}">文章目录</a></header>
+<main id="main">{{ content }}</main>
+<footer>© {{ 'now' | date: '%Y' }} Limanman · 用文字记录成长</footer>
+</body>
+</html>
