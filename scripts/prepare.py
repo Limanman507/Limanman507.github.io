@@ -9,7 +9,7 @@ OUTPUT = ROOT / ".build-source"
 # Copy into a dedicated build directory; never modify docs/ originals.
 OUTPUT.mkdir(exist_ok=True)
 for entry in ROOT.iterdir():
-    if entry.name in {".git", ".github", ".build-source", "scripts", "publish.cmd", "publish.ps1", "README.md"}:
+    if entry.name in {".git", ".github", ".build-source", ".image-repo", "scripts", "publish.cmd", "publish.ps1", "README.md"}:
         continue
     target = OUTPUT / entry.name
     if entry.is_dir():

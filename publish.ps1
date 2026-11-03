@@ -1,6 +1,8 @@
 $ErrorActionPreference = 'Stop'
 Set-Location -LiteralPath $PSScriptRoot
 try {
+    python scripts/upload_images.py
+    if ($LASTEXITCODE -ne 0) { throw 'Image upload failed. Blog was not published. Check Python and image paths.' }
     git add -- docs assets _layouts _config.yml index.html .github scripts .gitignore publish.cmd publish.ps1 README.md
     if ($LASTEXITCODE -ne 0) { throw 'Git add failed.' }
     git diff --cached --quiet

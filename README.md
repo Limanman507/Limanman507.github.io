@@ -20,4 +20,19 @@
 构建脚本只在临时构建目录添加元数据，不会修改原始文章。
 
 publish.cmd 会提交博客目录中的改动并推送到 main。请只把准备公开的文章放进 docs。
-本地无需安装 Ruby、Jekyll 或 Python，日常发布仅使用 Git 和 Windows PowerShell。
+本地无需安装 Ruby 或 Jekyll。图片自动上传需要 Python 3、Git 和 Windows PowerShell（本机已具备）。
+
+## 图片自动发布
+
+保存文章后双击 `publish.cmd`，脚本会先把图片上传至 `Limanman507/pictureSource` 的 `blog/` 目录，再发布博客。
+
+- 支持 Markdown 图片、图片引用定义和 HTML 的 img 标签。
+- 支持相对路径、Windows 绝对路径、file URI、data URI，以及可公开下载的 HTTP/HTTPS 图片。
+- 相对路径以 Markdown 文件所在文件夹为准，例如 `![截图](images/docker.png)`。
+- 有空格的路径推荐写成 `![截图](<images/docker screenshot.png>)`。
+- 同一张图片按内容哈希去重，重复发布不会重复上传；代码示例里的图片语法不处理。
+- 上传成功后，原 Markdown 中的图片地址会替换为自己的图床地址，本地编辑器也会读取该地址。
+- 图片下载或上传失败时会停止发布，不会把无法处理的图片链接当作成功。
+- 需要登录才能下载或已经过期的图片，请先保存到电脑，再在笔记中引用本地图片。
+
+`.image-repo/` 是图床仓库的本地缓存，不会提交到博客或打包进网站。
